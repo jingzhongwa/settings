@@ -2,7 +2,8 @@
 # ----------------------------------------------------------------------------------------bash命令简写
 alias ll='ls -al'
 alias pv='php -v'
-alias rv='redis-server -v'
+alias rdv='redis-server -v'
+alias rdc='redis-cli'
 
 
 
@@ -43,6 +44,7 @@ function gitremote(){
 }
 
 # ----------------------------------------------------------------------------------------docker
+alias dc='docker'
 function dbt(){
 	docker build -t jingzhongwa/$1 $2
 }
@@ -59,10 +61,12 @@ function drmi(){
 }
 
 # ----------------------------------------------------------------------------------------docker-compose
+alias dclist="sed -n '64,p;76q' /Users/yanyiming/.bashrc"
 alias dcu="docker-compose up"
 alias dcud="docker-compose up -d"
 alias dcd="docker-compose down"
 alias dcstart="docker-compose start"
+alias dcres="docker-compose restart"
 alias dcstop="docker-compose stop"
 alias dcps="docker-compose ps"
 alias dcpsa="docker-compose ps -a"
@@ -76,6 +80,16 @@ alias jmeter="/Users/yanyiming/Software/apache-jmeter-5.2.1/bin/jmeter"
 
 
 # ----------------------------------------------------------------------------------------redis
-alias rs='redis-server'
-alias rc='redis-cli'
-alias rb='redis-benchmark'
+alias rds='redis-server'
+alias rdc='redis-cli'
+alias rdb='redis-benchmark'
+
+# ----------------------------------------------------------------------------------------vagrant
+alias vg='vagrant'
+
+
+# ----------------------------------------------------------------------------------------forever
+alias fv='forever'
+alias fvs='forever start'
+alias fvstop='forever start'
+

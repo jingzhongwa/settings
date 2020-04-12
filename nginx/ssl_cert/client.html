@@ -1,0 +1,110 @@
+<script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+<input type="text" id="uid" style="width: 300px;" value="1">
+<input type="text" id="operation" style="width: 300px;" value="1">
+<span id="recieve"></span>
+<br>
+<button onclick="connect()">连接服务器</button>
+<button onclick="send()">发送消息</button>
+<button onclick="disconnect()">断开连接</button>
+<script>
+    //判断当前用户是否登录-用laravel或者redis接口
+    uid = document.getElementById('uid').value
+    if (!uid){//判断本地是否存储有token
+        throw SyntaxError();
+    }
+
+
+    var token = 'asdjflkqori3413';
+    // var wsServer = encodeURI('ws://127.0.0.1:9502?uid=' + uid + '&token=' + token);
+    // var wsServer = encodeURI('ws://pipiluco.com:2502?uid=' + uid + '&token=' + token);
+    var wsServer = encodeURI('wss://www.pipiluco.com:2053');
+    // console.log(wsServer);
+    var websocket;
+    var connected = false;
+
+    //断线重连
+
+
+    //连接
+    function connect(){
+        console.log(connected);
+        if (connected)
+            return;
+
+        websocket = new WebSocket(wsServer);
+        connected = true;
+
+        console.log('connecting to ' + wsServer + ' ...' + Date());
+        websocket.onopen = function (evt) {
+            connected = true;
+            send();
+            console.log("Connected to WebSocket server.---"+ websocket.readyState + "at " + Date());
+        };
+        console.log('open');
+
+        websocket.onclose = function (evt) {
+            connected = false;
+            console.log("Disconnected" + evt + "---" + websocket.readyState + "at " + Date());
+        };
+        console.log('close');
+
+        websocket.onmessage = function (evt) {
+
+            console.log('Retrieved data from server: ' + evt.data + '---' + websocket.readyState);
+            // console.log(typeof evt.data)
+            // var data = eval('(' + evt.data + ')');
+            // document.getElementById('recieve').innerHTML = data.ms;
+            console.log('data=' + evt.data)
+        };
+
+        console.log('message');
+
+        websocket.onerror = function (evt, e) {
+            console.log('Error occured: ' + evt.data + '---' + websocket.readyState);
+        };
+
+        console.log('error');
+
+
+        setInterval(function () {
+
+            console.log('state :' + websocket.readyState);
+        }, 15000, websocket);
+
+    }
+
+    function send(str='1'){
+        var uid = document.getElementById('uid').value
+        var operation = document.getElementById("operation").value
+
+        uid = ""? 1 : uid;
+        operation = ""? 1 : operation;
+        var data = {
+            'uid': uid,
+            'operation': operation
+        }
+
+        // console.log('str-'+str);
+        websocket.send(JSON.stringify(data));
+    }
+
+    function disconnect() {
+        var uid = document.getElementById('uid').value
+        var data = {
+            'uid': uid,
+            'operation': 3
+        }
+        websocket.send(JSON.stringify(data));
+        websocket.close();
+    }
+    connect();
+
+    function alertObj(obj){
+        var str="";
+        for (var item in obj){
+            str +=item+":"+obj[item]+"\n";
+        }
+        console.log(str);
+    }
+
+</script>

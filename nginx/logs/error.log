@@ -232,3 +232,22 @@
 2020/03/29 12:08:33 [error] 7488#0: *24 open() "/usr/local/Cellar/nginx/1.17.8/html/live/test" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /live/test HTTP/1.0", host: "127.0.0.1:8080"
 2020/03/29 12:08:36 [error] 7488#0: *25 open() "/usr/local/Cellar/nginx/1.17.8/html/live/test.m3u8" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /live/test.m3u8 HTTP/1.1", host: "127.0.0.1:8080"
 2020/03/29 12:08:36 [error] 7488#0: *26 open() "/usr/local/Cellar/nginx/1.17.8/html/live/test.m3u8" failed (2: No such file or directory), client: 127.0.0.1, server: localhost, request: "GET /live/test.m3u8 HTTP/1.0", host: "127.0.0.1:8080"
+2020/04/03 07:59:26 [error] 37394#0: *85 rewrite or internal redirection cycle while internally redirecting to "/index.php", client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:443"
+2020/04/03 07:59:42 [error] 37394#0: *86 rewrite or internal redirection cycle while internally redirecting to "/index.php", client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "test.local:443"
+2020/04/03 09:01:10 [error] 37581#0: *137 open() "/Users/yanyiming/wss_to_ws/robots.txt" failed (2: No such file or directory), client: 127.0.0.1, server: test.local, request: "GET /robots.txt HTTP/1.1", host: "test.local:443"
+2020/04/03 09:01:39 [error] 37581#0: *137 open() "/Users/yanyiming/wss_to_ws/favicon.ico" failed (2: No such file or directory), client: 127.0.0.1, server: test.local, request: "GET /favicon.ico HTTP/1.1", host: "test.local:443", referrer: "http://test.local:443/"
+2020/04/03 09:08:44 [emerg] 7487#0: no "ssl_certificate" is defined for the "listen ... ssl" directive in /Users/yanyiming/nginx/servers/wss_to_ws.conf:1
+2020/04/03 09:11:04 [emerg] 7487#0: no "ssl_certificate" is defined for the "listen ... ssl" directive in /Users/yanyiming/nginx/servers/wss_to_ws.conf:1
+2020/04/04 10:48:10 [emerg] 7487#0: no "ssl_certificate" is defined for the "listen ... ssl" directive in /Users/yanyiming/nginx/servers/wss_to_ws.conf:1
+2020/04/10 17:46:45 [emerg] 7487#0: no "ssl_certificate" is defined for the "listen ... ssl" directive in /Users/yanyiming/nginx/servers/wss_to_ws.conf:1
+2020/04/10 17:52:17 [emerg] 7487#0: no "ssl_certificate" is defined for the "listen ... ssl" directive in /Users/yanyiming/nginx/servers/wss_to_ws.conf:1
+2020/04/10 18:12:04 [emerg] 7487#0: no "ssl_certificate" is defined for the "listen ... ssl" directive in /Users/yanyiming/nginx/servers/wss_to_ws.conf:1
+2020/04/10 18:13:33 [emerg] 7487#0: no "ssl_certificate" is defined for the "listen ... ssl" directive in /Users/yanyiming/nginx/servers/wss_to_ws.conf:1
+2020/04/10 18:19:10 [emerg] 7487#0: no "ssl_certificate" is defined for the "listen ... ssl" directive in /Users/yanyiming/nginx/servers/wss_to_ws.conf:1
+2020/04/10 18:24:35 [emerg] 82355#0: bind() to 0.0.0.0:9503 failed (48: Address already in use)
+2020/04/10 18:24:35 [emerg] 82355#0: bind() to 0.0.0.0:9503 failed (48: Address already in use)
+2020/04/10 18:24:35 [emerg] 82355#0: bind() to 0.0.0.0:9503 failed (48: Address already in use)
+2020/04/10 18:24:35 [emerg] 82355#0: bind() to 0.0.0.0:9503 failed (48: Address already in use)
+2020/04/10 19:00:09 [error] 83371#0: *1 kevent() reported that connect() failed (61: Connection refused) while connecting to upstream, client: 127.0.0.1, server: ws.localhost, request: "GET /broadcast HTTP/1.1", upstream: "http://127.0.0.1:5200/broadcast", host: "ws.localhost"
+2020/04/10 19:02:08 [error] 83371#0: *3 kevent() reported that connect() failed (61: Connection refused) while connecting to upstream, client: 127.0.0.1, server: ws.localhost, request: "GET /broadcast HTTP/1.1", upstream: "http://127.0.0.1:5200/broadcast", host: "ws.localhost"
+2020/04/10 19:02:15 [error] 83371#0: *3 kevent() reported that connect() failed (61: Connection refused) while connecting to upstream, client: 127.0.0.1, server: ws.localhost, request: "GET /broadcast HTTP/1.1", upstream: "http://127.0.0.1:5200/broadcast", host: "ws.localhost"

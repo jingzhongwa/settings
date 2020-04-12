@@ -43,6 +43,12 @@ function gitremote(){
 	git push -u origin master
 }
 
+function gitpush(){
+	git add -A;
+	git commit -m $1;
+	git push
+}
+
 # ----------------------------------------------------------------------------------------docker
 alias dc='docker'
 function dbt(){
@@ -75,8 +81,9 @@ function dcrun () {
 	docker-compose exec $1 bash;
 }
 
-# ----------------------------------------------------------------------------------------jmeter
-alias jmeter="/Users/yanyiming/Software/apache-jmeter-5.2.1/bin/jmeter"
+# ----------------------------------------------------------------------------------------jmeter 采用brew安装的jmeter代替
+#alias jmeter="/Users/yanyiming/Software/apache-jmeter-5.2.1/bin/jmeter"
+alias jm="/usr/local/Cellar/jmeter/5.2.1/bin/jmeter"
 
 
 # ----------------------------------------------------------------------------------------redis
@@ -93,3 +100,7 @@ alias fv='forever'
 alias fvs='forever start'
 alias fvstop='forever start'
 
+
+# ----------------------------------------------------------------------------------------tail -n
+alias tn='tail -n'
+alias tn50='tail -n 50'
